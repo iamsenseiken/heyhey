@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hey Comparison</title>
+    <script>
+        function compareEquations() {
+            // Get the value of Hey from the input
+            var hey = parseFloat(document.getElementById("heyInput").value);
+            
+            // Calculate the values of the equations
+            var equation1 = 2 * Math.pow(hey, 2) + 1;
+            var equation2 = Math.pow(hey, 4);
+            
+            // Determine which equation is greater
+            var result;
+            if (equation1 > equation2) {
+                result = "2 * Hey^2 + 1 is greater than Hey^4.";
+            } else if (equation1 < equation2) {
+                result = "Hey^4 is greater than 2 * Hey^2 + 1.";
+            } else {
+                result = "Both equations are equal.";
+            }
+            
+            // Display the result
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hey Equation Comparison</h1>
+    <p>Enter a value for Hey:</p>
+    <input type="number" id="heyInput" step="any">
+    <button onclick="compareEquations()">Compare</button>
+    <p id="result"></p>
+</body>
+</html>
